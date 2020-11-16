@@ -1,0 +1,12 @@
+C:\projetos\bpFantasy\Services\bin\Release\netcoreapp2.2\bpFantasy.Services.deps.json
+C:\projetos\bpFantasy\Services\bin\Release\netcoreapp2.2\bpFantasy.Services.dll
+C:\projetos\bpFantasy\Services\bin\Release\netcoreapp2.2\bpFantasy.Services.pdb
+C:\projetos\bpFantasy\Services\bin\Release\netcoreapp2.2\bpFantasy.Domain.dll
+C:\projetos\bpFantasy\Services\bin\Release\netcoreapp2.2\bpFantasy.Domain.pdb
+C:\projetos\bpFantasy\Services\obj\Release\netcoreapp2.2\bpFantasy.Services.csprojAssemblyReference.cache
+C:\projetos\bpFantasy\Services\obj\Release\netcoreapp2.2\bpFantasy.Services.csproj.CoreCompileInputs.cache
+C:\projetos\bpFantasy\Services\obj\Release\netcoreapp2.2\bpFantasy.Services.AssemblyInfoInputs.cache
+C:\projetos\bpFantasy\Services\obj\Release\netcoreapp2.2\bpFantasy.Services.AssemblyInfo.cs
+C:\projetos\bpFantasy\Services\obj\Release\netcoreapp2.2\bpFantasy.Services.csproj.CopyComplete
+C:\projetos\bpFantasy\Services\obj\Release\netcoreapp2.2\bpFantasy.Services.dll
+C:\projetos\bpFantasy\Services\obj\Release\netcoreapp2.2\bpFantasy.Services.pdb
