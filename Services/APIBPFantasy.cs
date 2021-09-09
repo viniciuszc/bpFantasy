@@ -55,7 +55,7 @@ namespace bpFantasy.Services
 
         public IList<Media> allTimesMedia()
         {
-            string paramenters = "{\"class\":\"estatisticas\",\"action\":\"buscarEstatisticasTimesMedia\",\"params\":{\":liga_id\":\"4\",\":temporada_id\":\"3\"}}";
+            string paramenters = "{\"class\":\"estatisticas\",\"action\":\"buscarEstatisticasTimesMedia\",\"params\":{\":liga_id\":\"4\",\":temporada_id\":\"4\"}}";
 
             string response = getAPI(paramenters);
 
@@ -115,8 +115,18 @@ namespace bpFantasy.Services
 
             string response = getAPI(paramenters);
 
-            JObject objMediasJogador = JObject.Parse(response);
-            JArray arrMedias = (JArray)objMediasJogador["medias"];
+            JObject objMediasJogador = new JObject();
+            JArray arrMedias = new JArray();
+
+            if (response != "")
+            {
+                objMediasJogador = JObject.Parse(response);
+                arrMedias = (JArray)objMediasJogador["medias"];
+            }
+            else
+            {
+                
+            }
 
             IList<Media> mediasJogador = arrMedias.ToObject<IList<Media>>();
 
@@ -125,7 +135,7 @@ namespace bpFantasy.Services
 
         public IList<Media> mediasJogadorGenerico()
         {
-            string paramenters = "{\"class\":\"estatisticas\",\"action\":\"buscarEstatisticasJogadores\",\"params\":{\":liga_id\":\"4\",\":temporada_id\":\"3\"}}";
+            string paramenters = "{\"class\":\"estatisticas\",\"action\":\"buscarEstatisticasJogadores\",\"params\":{\":liga_id\":\"4\",\":temporada_id\":\"4\"}}";
 
             string response = getAPI(paramenters);
 
@@ -152,7 +162,7 @@ namespace bpFantasy.Services
             {
                 Console.Write(".");
                 IList<Media> media = mediasJogador(jogador.Id);
-                if (media.Count > 0 && media[0].Ano == 2019)
+                if (media.Count > 0 && media[0].Ano == 2020)
                 {
                     JogadoresMedia[i] = mediasJogador(jogador.Id)[0];
                 }
@@ -184,7 +194,7 @@ namespace bpFantasy.Services
             string response;
             
             string urlNBAAPI = @"https://stats.nba.com/stats/leagueLeaders";
-            string parameters = "LeagueID=00&PerMode=PerGame&Scope=S&Season=2019-20&SeasonType=Regular+Season&StatCategory=PTS";
+            string parameters = "LeagueID=00&PerMode=PerGame&Scope=S&Season=2020-21&SeasonType=Regular+Season&StatCategory=PTS";
 
 
 

@@ -10,3 +10,14 @@ C:\projetos\bpFantasy\Services\obj\Debug\netcoreapp2.2\bpFantasy.Services.csproj
 C:\projetos\bpFantasy\Services\bin\Debug\netcoreapp2.2\bpFantasy.Services.pdb
 C:\projetos\bpFantasy\Services\obj\Debug\netcoreapp2.2\bpFantasy.Services.dll
 C:\projetos\bpFantasy\Services\obj\Debug\netcoreapp2.2\bpFantasy.Services.pdb
+C:\pessoal\bpFantasy\Services\bin\Debug\netcoreapp2.2\bpFantasy.Services.deps.json
+C:\pessoal\bpFantasy\Services\bin\Debug\netcoreapp2.2\bpFantasy.Services.dll
+C:\pessoal\bpFantasy\Services\bin\Debug\netcoreapp2.2\bpFantasy.Services.pdb
+C:\pessoal\bpFantasy\Services\bin\Debug\netcoreapp2.2\bpFantasy.Domain.dll
+C:\pessoal\bpFantasy\Services\bin\Debug\netcoreapp2.2\bpFantasy.Domain.pdb
+C:\pessoal\bpFantasy\Services\obj\Debug\netcoreapp2.2\bpFantasy.Services.csprojAssemblyReference.cache
+C:\pessoal\bpFantasy\Services\obj\Debug\netcoreapp2.2\bpFantasy.Services.AssemblyInfoInputs.cache
+C:\pessoal\bpFantasy\Services\obj\Debug\netcoreapp2.2\bpFantasy.Services.AssemblyInfo.cs
+C:\pessoal\bpFantasy\Services\obj\Debug\netcoreapp2.2\bpFantasy.Services.csproj.CopyComplete
+C:\pessoal\bpFantasy\Services\obj\Debug\netcoreapp2.2\bpFantasy.Services.dll
+C:\pessoal\bpFantasy\Services\obj\Debug\netcoreapp2.2\bpFantasy.Services.pdb

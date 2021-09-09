@@ -7,3 +7,11 @@ C:\projetos\bpFantasy\Domain\obj\Debug\netcoreapp2.2\bpFantasy.Domain.AssemblyIn
 C:\projetos\bpFantasy\Domain\obj\Debug\netcoreapp2.2\bpFantasy.Domain.AssemblyInfo.cs
 C:\projetos\bpFantasy\Domain\obj\Debug\netcoreapp2.2\bpFantasy.Domain.dll
 C:\projetos\bpFantasy\Domain\obj\Debug\netcoreapp2.2\bpFantasy.Domain.pdb
+C:\pessoal\bpFantasy\Domain\bin\Debug\netcoreapp2.2\bpFantasy.Domain.deps.json
+C:\pessoal\bpFantasy\Domain\bin\Debug\netcoreapp2.2\bpFantasy.Domain.dll
+C:\pessoal\bpFantasy\Domain\bin\Debug\netcoreapp2.2\bpFantasy.Domain.pdb
+C:\pessoal\bpFantasy\Domain\obj\Debug\netcoreapp2.2\bpFantasy.Domain.csprojAssemblyReference.cache
+C:\pessoal\bpFantasy\Domain\obj\Debug\netcoreapp2.2\bpFantasy.Domain.AssemblyInfoInputs.cache
+C:\pessoal\bpFantasy\Domain\obj\Debug\netcoreapp2.2\bpFantasy.Domain.AssemblyInfo.cs
+C:\pessoal\bpFantasy\Domain\obj\Debug\netcoreapp2.2\bpFantasy.Domain.dll
+C:\pessoal\bpFantasy\Domain\obj\Debug\netcoreapp2.2\bpFantasy.Domain.pdb

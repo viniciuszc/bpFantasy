@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="16.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Domain\bpFantasy.Domain.csproj" />
     <ProjectReference Include="..\Services\bpFantasy.Services.csproj" />
   </ItemGroup>

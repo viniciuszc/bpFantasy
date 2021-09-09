@@ -4,7 +4,9 @@ using System.Net;
 using bpFantasy.Domain.Entities;
 using bpFantasy.Services;
 using System.Linq;
-
+using System.IO;
+using CsvHelper;
+using System.Globalization;
 
 namespace bpFantasy.Application
 {
@@ -19,13 +21,15 @@ namespace bpFantasy.Application
             do
             {
                 userInput = DisplayMenu();
-
+                
+                //1. Listar times
                 if (userInput == 1)
                 {
                     Console.WriteLine("Aguarde ...");
                     DisplayTimes();
                 }
 
+                //2.Simular resultados a partir das médias dos times
                 if (userInput == 2)
                 {
                     Console.WriteLine("Aguarde ...");
@@ -39,6 +43,7 @@ namespace bpFantasy.Application
                     DisplaySimulation(timeMediaSelected);
                 }
 
+                //3.Médias dos times
                 if (userInput == 3)
                 {
                     Console.WriteLine("Aguarde ...");
@@ -48,6 +53,7 @@ namespace bpFantasy.Application
                     PrintAvg(TimesMedia);
                 }
 
+                //4.Selecione um time para comparar com a média da Liga
                 if (userInput == 4)
                 {
                     Console.WriteLine("Aguarde ...");
@@ -63,6 +69,7 @@ namespace bpFantasy.Application
 
                 }
 
+                //5.Pontuaçao dos Jogadores do Time
                 if (userInput == 5)
                 {
                     Console.WriteLine("Aguarde ...");
@@ -76,6 +83,7 @@ namespace bpFantasy.Application
                     DisplayJogadoresTime(idTimeJogadores);
                 }
 
+                //6.Melhor Escalação
                 if (userInput == 6)
                 {
                     Console.WriteLine("Aguarde ...");
@@ -89,28 +97,93 @@ namespace bpFantasy.Application
                     DisplayMelhorEscalacao(idTimeJogadores);
                 }
 
+                //7. Melhores Jogadores
                 if (userInput == 7)
                 {
                     Console.WriteLine("Aguarde ...");
                     DisplayMelhoresJogadoresGenericos();
                 }
 
+                //8. Melhores Jogadores NBA API
                 if (userInput == 8)
                 {
                     Console.WriteLine("Aguarde ...");
                     DisplayMediaAPINBA();
                 }
 
+                //9. Melhores Free Agency
                 if (userInput == 9)
                 {
                     Console.WriteLine("Aguarde ...");
                     DisplayJogadoresSemTime();
+                }
+                
+                //10 Exporta CSV
+                if (userInput == 10)
+                {
+                    Console.WriteLine("Aguarde ...");
+                    ExportCSVJogadores();
                 }
 
 
             } while (userInput > 0);
 
             Console.ReadKey();
+        }
+
+        private static void ExportCSVJogadores()
+        {
+            int idTimeJogadores = 95;
+            Time time = new Time();
+            time = app.Time(idTimeJogadores);
+            Console.WriteLine(time.Nome);
+            PrintStaticHeader();
+
+            Media mediaTimes = app.allJogadoreMedia();
+
+            IList<Jogador> jogadoresTime = app.jogadoresTime(idTimeJogadores);
+
+            Media[] ptsFinalJogadores = new Media[jogadoresTime.Count()];
+
+            int i = 0;
+
+            foreach (Jogador jogador in jogadoresTime)
+            {
+                IList<Media> mediasJogador = app.mediasJogador(jogador.Id);
+                if (mediasJogador.Count() > 0)
+                {
+                    mediasJogador[0].PtsFinal = PontuacaoJogador(mediasJogador[0], mediaTimes);
+                    ptsFinalJogadores[i] = mediasJogador[0];
+
+                }
+                else
+                {
+                    Media jogadorZerado = new Media();
+                    jogadorZerado.Nome = jogador.Nome;
+                    jogadorZerado.Pts = 0;
+                    jogadorZerado.Reb = 0;
+                    jogadorZerado.Ast = 0;
+                    jogadorZerado.Blk = 0;
+                    jogadorZerado.Stl = 0;
+                    jogadorZerado.Tov = 0;
+                    jogadorZerado.Pt3 = 0;
+                    jogadorZerado.PtsFinal = 0;
+
+                    ptsFinalJogadores[i] = jogadorZerado;
+                }
+
+                i++;
+            }
+
+            IEnumerable<Media> query = ptsFinalJogadores.OrderByDescending(j => j.PtsFinal);
+
+            List<Media> mediaJogadoresCSV = query.ToList();
+
+            using (var writer = new StreamWriter($"C:\\pessoal\\bpFantasy\\mediaJogadoresJund.csv"))
+            using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+            {
+                csv.WriteRecords(mediaJogadoresCSV);
+            }
         }
 
         static public int DisplayMenu()
@@ -376,8 +449,15 @@ namespace bpFantasy.Application
                 }
             }
 
-        }
+            List<Media> mediaJogadoresFACSV = query.ToList();
 
+            using (var writer = new StreamWriter($"C:\\pessoal\\bpFantasy\\mediaFreeAgency.csv"))
+            using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+            {
+                csv.WriteRecords(mediaJogadoresFACSV);
+            }
+
+        }
 
         static public void DisplayJogador(Media media1, Media media2)
         {
